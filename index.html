@@ -12,9 +12,15 @@
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<h1>Agregar Nota</h1>
+					<label>Nombre</label>
+					<input type="text" class="form-control" v-model="nombre">
+					<label>Promedio</label>
+					<input type="number" max="20" min="0" class="form-control" v-model="promedio">
+					<input type="button" value="Guardar" class="btn btn-success" v-on:click="agregarNota">
 				</div>
 				<div class="col-md-6 col-xs-12">
-					<h1>Lista de Notas</h1>
+					<h1 v-if="lista.length > 0">Lista de Notas</h1>
+					<h1 v-else="lista">No existen notas</h1>
 					<table class="table">
 						<tr>
 							<th>Nombre</th>
@@ -33,19 +39,14 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-
-
-
-
-	
+	</div>	
 	
 </body>
 	<script src="js/vue.js"></script>
 	<script src="js/principal.js"></script>
+
+</html>
 	<!-- <script src="js/vue.js"></script>
 		desarrollo: se aplcia cuando el proyecto está en desaroollo
 		<script src="js/vue.min.js"></script>
 		produccion: se aplica cuando este al aire nuestro proyecto, es decir, modo produccion -->
-</html>
